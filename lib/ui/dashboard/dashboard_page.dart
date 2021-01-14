@@ -7,6 +7,8 @@ import 'package:flutter_sample_app/generated/l10n.dart';
 import 'package:flutter_sample_app/models/popular_set.dart';
 import 'package:flutter_sample_app/ui/base_page.dart';
 import 'package:flutter_sample_app/ui/dashboard/dashboard_bloc.dart';
+import 'package:flutter_sample_app/ui/dashboard/dashboard_event.dart';
+import 'package:flutter_sample_app/ui/filters/filters_page.dart';
 
 import 'dashboard_state.dart';
 
@@ -16,7 +18,7 @@ class DashboardPage extends BasePage<DashboardBloc> {
     return BlocProvider(
       create: (_) => bloc,
       child: SingleChildScrollView(
-        child: BlocBuilder<DashboardBloc, DashboardState>(
+        child: BlocConsumer<DashboardBloc, DashboardState>(
           builder: (BuildContext context, DashboardState state) {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,6 +30,19 @@ class DashboardPage extends BasePage<DashboardBloc> {
                 PopularSetsList(state.popularSets)
               ],
             );
+          },
+          listener: (BuildContext context, DashboardState state) {
+            if (state.areFiltersVisible) {
+              showModalBottomSheet(
+                  isScrollControlled: true,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(Dimensions.RADIUS_NORMAL),
+                    ),
+                  ),
+                  context: context,
+                  builder: (context) => FiltersPage());
+            }
           },
         ),
       ),
@@ -174,13 +189,14 @@ class SearchBar extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: Dimensions.PADDING_SMALL),
-              child: Icon(
+            IconButton(
+              icon: Icon(
                 Icons.tune,
                 color: AppColors.primary,
               ),
+              onPressed: () {
+                BlocProvider.of<DashboardBloc>(context).add(OpenFilters());
+              },
             ),
           ],
         ),
