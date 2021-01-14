@@ -26,7 +26,12 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
       yield state.copyWith(
           popularSets: popularSets,
           currentAddress: currentAddress,
-          unreadEvents: unreadEvents);
+          unreadEvents: unreadEvents,
+          areFiltersVisible: false);
+    }
+
+    if (event is OpenFilters) {
+      yield state.copyWith(areFiltersVisible: true);
     }
   }
 }

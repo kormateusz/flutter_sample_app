@@ -84,6 +84,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Filter`
+  String get filters_title {
+    return Intl.message(
+      'Filter',
+      name: 'filters_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Category`
+  String get filters_category_header {
+    return Intl.message(
+      'Category',
+      name: 'filters_category_header',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Types`
+  String get filters_types_header {
+    return Intl.message(
+      'Types',
+      name: 'filters_types_header',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price`
+  String get filters_price_header {
+    return Intl.message(
+      'Price',
+      name: 'filters_price_header',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Apply filters`
+  String get filters_apply_filters_button {
+    return Intl.message(
+      'Apply filters',
+      name: 'filters_apply_filters_button',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clear filters`
+  String get filters_clear_filters_button {
+    return Intl.message(
+      'Clear filters',
+      name: 'filters_clear_filters_button',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

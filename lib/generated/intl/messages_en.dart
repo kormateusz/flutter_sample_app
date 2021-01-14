@@ -25,6 +25,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "dashboard_header_title_part_two" : MessageLookupByLibrary.simpleMessage("in your city"),
     "dashboard_popular_sets_see_all_button" : MessageLookupByLibrary.simpleMessage("See all"),
     "dashboard_popular_sets_title" : MessageLookupByLibrary.simpleMessage("Our Popular sets"),
-    "dashboard_search_bar_hint" : MessageLookupByLibrary.simpleMessage("What do you want to eat?")
+    "dashboard_search_bar_hint" : MessageLookupByLibrary.simpleMessage("What do you want to eat?"),
+    "filters_apply_filters_button" : MessageLookupByLibrary.simpleMessage("Apply filters"),
+    "filters_category_header" : MessageLookupByLibrary.simpleMessage("Category"),
+    "filters_clear_filters_button" : MessageLookupByLibrary.simpleMessage("Clear filters"),
+    "filters_price_header" : MessageLookupByLibrary.simpleMessage("Price"),
+    "filters_title" : MessageLookupByLibrary.simpleMessage("Filter"),
+    "filters_types_header" : MessageLookupByLibrary.simpleMessage("Types")
   };
 }
