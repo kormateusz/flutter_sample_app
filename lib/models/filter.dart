@@ -1,9 +1,8 @@
-class Filter {
-  final String label;
-  final bool isSelected;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  Filter(this.label, this.isSelected);
+part 'filter.freezed.dart';
 
-  Filter copyWith({String label, bool isSelected}) =>
-      Filter(label ?? this.label, isSelected ?? this.isSelected);
+@freezed
+abstract class Filter with _$Filter {
+  factory Filter(String label, bool isSelected) = _Filter;
 }

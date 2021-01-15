@@ -11,7 +11,7 @@ class FiltersBloc extends Bloc<FiltersEvents, FiltersState> {
   List<Filter> _typesFilters;
   List<Filter> _priceFilters;
 
-  FiltersBloc(this._filtersRepository) : super(FiltersState.init()) {
+  FiltersBloc(this._filtersRepository) : super(FiltersState()) {
     this.add(LoadFilters());
   }
 
